@@ -7,6 +7,8 @@
 #define COLOR 3
 #endif
 
+#define plot(x,y) putpixel(x,y,COLOR)
+
 // using the DDA line algorithm :
 void DDA(int x0,int y0,int x1,int y1){
 
@@ -25,7 +27,7 @@ void DDA(int x0,int y0,int x1,int y1){
 		for(x=x0;x<x1;x++,y+=slope){
 			x_sub = (int)x;
 			y_sub = (int)y;
-			putpixel(x,y,COLOR);
+			plot(x,y);
 		}
 
 	}else{
@@ -33,7 +35,7 @@ void DDA(int x0,int y0,int x1,int y1){
 		for(y=y0;y<=y1;y++,x+=(1.0/slope)){
 			x_sub = (int)x;
 			y_sub = (int)y;
-			putpixel(x,y,COLOR);	
+			plot(x,y);	
 		}
 	}
 }
